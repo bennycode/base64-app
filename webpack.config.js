@@ -12,6 +12,9 @@ module.exports = {
     library: 'B64',
     path: `${__dirname}/dist`,
   },
+  node: {
+    fs: 'empty',
+  },
   plugins: [new webpack.BannerPlugin(`${pkg.name} v${pkg.version}`)],
   target: 'web',
 };

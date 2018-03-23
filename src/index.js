@@ -1,5 +1,12 @@
+const fs = require('fs');
+
 function encode(ascii) {
   return Buffer.from(ascii).toString('base64');
+}
+
+function encodeToFile(ascii, path) {
+  const encoded = encode(ascii);
+  fs.writeFileSync(path, encoded, 'utf8');
 }
 
 function decode(base64) {
@@ -8,5 +15,6 @@ function decode(base64) {
 
 module.exports = {
   encode,
+  encodeToFile,
   decode,
 };
