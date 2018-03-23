@@ -1,8 +1,15 @@
 {
   "dependencies": {
-    "cross-env": "5.1.4"
+    "cross-env": "5.1.4",
+    "dexie": "2.0.2"
   },
   "devDependencies": {
+    "karma": "2.0.0",
+    "karma-chrome-launcher": "2.2.0",
+    "karma-jasmine": "1.1.1",
+    "karma-jasmine-diff-reporter": "1.1.1",
+    "karma-sourcemap-loader": "0.3.7",
+    "jasmine": "3.1.0",
     "webpack": "4.2.0",
     "webpack-cli": "2.0.13"
   },
@@ -10,9 +17,9 @@
   "name": "base64-app",
   "scripts": {
     "bundle": "webpack",
-    "postinstall": "echo \"Read to rumble!\"",
+    "postinstall": "echo \"Ready to rumble!\"",
     "start": "cross-env NODE_DEBUG=MyApp node src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start"
   },
   "version": "1.0.0"
 }

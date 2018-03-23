@@ -1,10 +1,17 @@
 <html>
 <head>
     <script src="../dist/base64-app.bundle.js"></script>
+    <script src="https://unpkg.com/dexie@2.0.2/dist/dexie.js"></script>
 </head>
 <body>
 <script>
-  console.log(window.B64);
+  const db = new Dexie('MyDatabase');
+
+  db.version(1).stores({
+    encodings: '++id, ascii, base64'
+  });
+
+  window.B64.encodeToDatabase('Test', db);
 </script>
 </body>
 </html>
